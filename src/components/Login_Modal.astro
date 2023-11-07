@@ -1,0 +1,65 @@
+---
+
+---
+
+<div class="login-modal">
+  <form id="signup">
+    <input type="email" placeholder="Enter your email address" />
+    <input type="password" placeholder="Enter your passw*rd" />
+    <button type="submit">Signup</button>
+  </form>
+  <form id="login">
+    <input type="email" placeholder="Enter you registered email address" />
+    <input type="password" placeholder="Enter your passw*rd" />
+    <button type="submit">Login</button>
+  </form>
+</div>
+<script>
+  document.getElementById("signup")?.addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    const email = ev?.target?.[0]?.value;
+    const password = ev?.target?.[1]?.value;
+    fetch("/api/signup", {
+      method: "POST",
+      body: JSON.stringify({email, password}),
+    }).then(async (data) => {
+      console.log(await data.json());
+    });
+  });
+</script>
+<style lang="scss">
+  .login-modal {
+    display: flex;
+    // background-color:;
+    position: absolute;
+    align-items: center;
+    justify-items: center;
+    #signup {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      &:active {
+        outline-style: none;
+        outline-color: transparent;
+        outline-width: 0rem;
+      }
+      outline-style: none;
+      outline-color: transparent;
+      outline-width: 0rem;
+    }
+    #login {
+      display: flex;
+      width: 40%;
+      flex-direction: column;
+
+      &:active {
+        outline-style: none;
+        outline-color: transparent;
+        outline-width: 0rem;
+      }
+      outline-style: none;
+      outline-color: transparent;
+      outline-width: 0rem;
+    }
+  }
+</style>

@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Test">
+  <header class="parent">
+    <img
+      src="/logistify-black.svg"
+      draggable="false"
+      width="64"
+      height="64"
+      class="float-left p-2"
+    />
+    <div class="child btn-grp">
+      <button onclick='location.replace("/dashboard");'>Dashboard</button><button
+        onclick='location.replace("/about");'>About</button
+      ><button onclick='location.replace("/login");'>Login</button>
+    </div>
+  </header>
+</Layout>
+<style lang="scss">
+  .parent {
+    display: flex;
+    font: Basic;
+    font-weight: 700;
+    margin: 1rem;
+    border-radius: 0.8rem;
+    max-width: 100%;
+    background-color: #e0e0e0;
+    .child {
+      display: flex;
+      width: 2rem;
+      margin: 1rem;
+      height: 2rem;
+      flex: 1 1 auto;
+      border-radius: 7px;
+      &.btn-grp {
+        display: flex;
+        justify-content: flex-end;
+        button {
+          border-radius: 7px;
+          align-self: center;
+          justify-content: center;
+          padding: 0.5rem;
+          background-color: #c9c9c9;
+          border: none;
+          box-shadow: 7px 6px 0px #939393;
+          outline-width: 0px;
+
+          &:hover {
+            background-color: #c2c1c1;
+            transition: 0.02s;
+          }
+
+          &:active {
+            box-shadow: 3px 2px 0px #939393;
+            transform: translateX(7px);
+            transform: translateY(6px);
+            transition: 0.01s;
+            // box-shadow: 7px 6px 0px #939393;
+          }
+          &:first-child {
+            margin-left: 0.5rem;
+          }
+          &:not(:first-child) {
+            margin-left: 2rem;
+          }
+        }
+      }
+    }
+  }
+</style>

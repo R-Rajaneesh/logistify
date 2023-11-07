@@ -1,0 +1,35 @@
+// Root Styles
+:root {
+  --light-bg: #e0e0e0;
+}
+// Font Registers
+@font-face {
+  font-family: "CaskaydiaCove NF";
+  src: url("/fonts/CaskaydiaCoveNF-R.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Basic";
+  src: url("/fonts/Basic-R.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-family: system-ui, sans-serif;
+  background: #ffffff;
+  background-size: 224px;
+}
+code {
+  font-family: CaskaydiaCove NF, Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  background-color: #292929;
+  padding: 10px;
+  min-height: 5rem;
+  min-width: 5rem;
+  border-radius: 15px;
+  border-color: transparent;
+}
